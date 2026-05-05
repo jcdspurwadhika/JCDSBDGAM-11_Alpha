@@ -369,7 +369,7 @@ Model XGBoost best dapat mengidentifikasi tamu hotel yang kemungkinan besar akan
 
 - `previous_cancellations`; Tamu yang memiliki riwayat pembatalan sebelumnya yang tinggi (nilai merah/tinggi) mendorong prediksi ke arah pembatalan dengan kuat. Hal ini menegaskan bahwa histori perilaku pembatalan merupakan prediktor yang sangat kuat, di mana tamu yang pernah membatalkan pemesanan di masa lalu memiliki kecenderungan yang jauh lebih tinggi untuk kembali membatalkan pemesanan berikutnya, sehingga riwayat tamu perlu menjadi pertimbangan utama dalam strategi manajemen risiko pembatalan hotel.
 ****
-### Tech Stack
+### Tech Stack 
 ****
 - Data Processing & Analysis: Python, pandas, numpy, scipy, statsmodels
 - Visualization: matplotlib, seaborn, folium (geospatial heatmap), Tableau Public
