@@ -350,6 +350,24 @@ Model XGBoost best dapat mengidentifikasi tamu hotel yang kemungkinan besar akan
 -  **Prioritaskan penanganan segmen pasar berisiko tinggi** yang diidentifikasi oleh SHAP plot seperti segmen **Online Travel Agent (OTA)** dan tamu dengan **histori pembatalan sebelumnya**, dengan menerapkan kebijakan pemesanan yang lebih ketat seperti deposit wajib atau batas waktu konfirmasi lebih awal, untuk menekan angka **2.011 pembatalan yang tidak terdeteksi** dan mengurangi kerugian FN sebesar **211,155 euro**
 
 - **Integrasikan model dengan sistem Early Warning Dashboard** yang menampilkan daftar tamu berisiko tinggi secara real-time kepada tim operasional hotel setiap hariny
+
+**Fitur yang mempengaruhi pembatalan berdasarkan SHAP**
+
+- `country_6`; Tamu yang berasal dari negara tertentu (nilai merah/tinggi) mendorong prediksi ke arah pembatalan secara signifikan. Hal ini menunjukkan bahwa asal negara tamu merupakan faktor paling dominan dalam menentukan risiko pembatalan, kemungkinan mencerminkan perbedaan budaya pemesanan, kebijakan visa, jarak perjalanan, serta kebiasaan perencanaan liburan antar negara yang berbeda-beda, sehingga tamu dari negara tertentu secara konsisten menunjukkan pola pembatalan yang lebih tinggi dibandingkan negara lainnya.
+
+- `lead_time`; Tamu yang memesan jauh hari sebelum tanggal kedatangan (nilai merah/tinggi) mendorong prediksi ke arah pembatalan secara kuat. Hal ini menunjukkan bahwa semakin panjang jarak waktu antara tanggal pemesanan dan tanggal kedatangan, semakin tinggi ketidakpastian rencana perjalanan tamu, sementara tamu yang memesan mendekati tanggal kedatangan cenderung memiliki komitmen yang lebih kuat dan jarang membatalkan pemesanan mereka.
+
+- `required_car_parking_spaces`; Tamu yang memesan tempat parkir kendaraan (nilai merah/tinggi) justru mendorong prediksi menjauh dari pembatalan. Hal ini mengindikasikan bahwa tamu yang meminta fasilitas parkir memiliki tingkat komitmen dan keseriusan yang lebih tinggi terhadap rencana menginap mereka, karena mereka telah merencanakan perjalanan secara lebih detail termasuk transportasi pribadi, sehingga menjadi indikator loyalitas tamu yang kuat.
+
+- `total_of_special_requests`; Tamu dengan jumlah permintaan khusus yang sedikit (nilai biru/rendah) cenderung mendorong prediksi menjauh dari pembatalan, sementara tamu dengan banyak permintaan khusus (nilai merah/tinggi) sedikit mendorong ke arah pembatalan. Hal ini menunjukkan bahwa tamu yang memiliki banyak ekspektasi spesifik terhadap layanan hotel lebih rentan membatalkan pemesanan apabila permintaan mereka tidak dapat dipenuhi atau terdapat ketidaksesuaian antara harapan dan kondisi aktual hotel.
+
+- `market_segment`; Segmen pasar tertentu (ditangkap melalui pengkodean biner) mendorong prediksi ke arah pembatalan secara berbeda-beda. Hal ini menunjukkan bahwa saluran pemesanan memainkan peran penting dalam perilaku pembatalan tamu, di mana segmen Online Travel Agent (OTA) cenderung memiliki tingkat pembatalan lebih tinggi karena kemudahan proses pembatalan dan kebijakan refund yang fleksibel, sementara tamu yang memesan secara langsung (direct booking) menunjukkan komitmen yang lebih kuat terhadap pemesanan mereka.
+
+- `adr (Average Daily Rate)`; Tamu yang memesan kamar dengan harga per malam yang tinggi (nilai merah/tinggi) mendorong prediksi ke arah pembatalan. Hal ini menunjukkan bahwa tamu yang membayar tarif kamar lebih mahal cenderung lebih sensitif terhadap perubahan harga dan kondisi, lebih sering membandingkan pilihan akomodasi lain, serta lebih berani membatalkan pemesanan apabila menemukan penawaran yang lebih baik atau terjadi perubahan rencana perjalanan.
+
+- `deposit_type_Non Refund`; Tamu yang memilih tipe deposit Non-Refund (nilai merah/tinggi) mendorong prediksi menjauh dari pembatalan secara signifikan. Hal ini membuktikan bahwa kebijakan deposit Non-Refund sangat efektif dalam mencegah pembatalan, karena tamu yang telah membayar deposit yang tidak dapat dikembalikan memiliki konsekuensi finansial yang jelas apabila membatalkan pemesanan, sehingga mendorong mereka untuk tetap melanjutkan rencana menginap.
+
+- `previous_cancellations`; Tamu yang memiliki riwayat pembatalan sebelumnya yang tinggi (nilai merah/tinggi) mendorong prediksi ke arah pembatalan dengan kuat. Hal ini menegaskan bahwa histori perilaku pembatalan merupakan prediktor yang sangat kuat, di mana tamu yang pernah membatalkan pemesanan di masa lalu memiliki kecenderungan yang jauh lebih tinggi untuk kembali membatalkan pemesanan berikutnya, sehingga riwayat tamu perlu menjadi pertimbangan utama dalam strategi manajemen risiko pembatalan hotel.
 ****
 ### Tech Stack
 ****
