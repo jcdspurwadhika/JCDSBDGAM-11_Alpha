@@ -368,7 +368,7 @@ Model XGBoost best dapat mengidentifikasi tamu hotel yang kemungkinan besar akan
 ### Dokumentasi
 ****
 **Dokumentasi Tableau**
-![Screenshot (301).png](screenshot.png)
+<img width="750" height="544" alt="Dasboard" src="https://github.com/user-attachments/assets/67a094f9-37e9-4ef5-bdb5-bb8acce54731" />
 
 **Dokumentasi Streamlit**
-![App streamlit.png](images.png)
+<img width="1920" height="812" alt="App streamlit" src="https://github.com/user-attachments/assets/01aea18b-714e-4fe7-8412-5ec23d907cfe" />
